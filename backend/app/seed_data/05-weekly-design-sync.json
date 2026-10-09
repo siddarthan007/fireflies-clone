@@ -1,0 +1,274 @@
+{
+  "title": "Weekly design sync",
+  "days_ago": 6,
+  "time": "16:00",
+  "tags": [
+    "design"
+  ],
+  "participants": [
+    "Saloni Mehta",
+    "Harshita Rao",
+    "Dev Malhotra",
+    "Siddartha Nepal"
+  ],
+  "overview": "The design team reviewed the onboarding revamp, where 38 percent of new users drop off at the goal selection step, and agreed to cut the step down to a single question. Dark mode has three text colours below the AA contrast ratio, which Dev will fix in the shared tokens. The team also decided to test the Hindi interface on a low end Android phone before release, because longer words broke two layouts.",
+  "chapters": [
+    {
+      "title": "Onboarding drop-off",
+      "start": 4.0,
+      "bullets": [
+        "38 percent of new users leave at the goal selection step, which asks five questions at once",
+        "Users who finish onboarding are three times more likely to return in the first week",
+        "Decision: reduce the step to one question and ask the rest later"
+      ]
+    },
+    {
+      "title": "Dark mode contrast",
+      "start": 114.4,
+      "bullets": [
+        "Three text colours in dark mode fall below the AA ratio of 4.5 to 1",
+        "The worst is the secondary text at 3.8 to 1 on the card background",
+        "Dev will fix the shared tokens so the change applies everywhere at once"
+      ]
+    },
+    {
+      "title": "Hindi interface and low end phones",
+      "start": 205.5,
+      "bullets": [
+        "Hindi labels are about 30 percent longer and broke two layouts, the filter chips and the tab bar",
+        "A large share of students use low end Android phones with slow connections",
+        "Saloni will test on a low end phone and list every broken layout before release"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Redesign the goal selection step as a single question and share the prototype",
+      "assignee": "Dev Malhotra",
+      "due_in_days": 3,
+      "done": false
+    },
+    {
+      "text": "Fix the three dark mode text colours that fail AA contrast in the shared tokens",
+      "assignee": "Dev Malhotra",
+      "due_in_days": 2,
+      "done": false
+    },
+    {
+      "text": "Run the Hindi interface on a low end Android phone and list broken layouts",
+      "assignee": "Saloni Mehta",
+      "due_in_days": 4,
+      "done": false
+    },
+    {
+      "text": "Pull the onboarding funnel numbers for the last four weeks into one sheet",
+      "assignee": "Harshita Rao",
+      "due_in_days": 1,
+      "done": true
+    },
+    {
+      "text": "Add an accessibility check to the pull request template",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 7,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Harshita Rao",
+      "start": 4.0,
+      "end": 19.6,
+      "text": "Okay, I'll start because my numbers are the reason for this meeting. I looked at the onboarding funnel for the last four weeks. Of every hundred people who sign up, sixty-two get past the goal selection step. So thirty-eight leave right there."
+    },
+    {
+      "speaker": "Dev Malhotra",
+      "start": 20.9,
+      "end": 27.9,
+      "text": "That's the step with the five dropdowns, right? Target role, experience, preferred language, daily time and the target company."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 29.2,
+      "end": 39.9,
+      "text": "Yes. And I checked the people who do finish onboarding. They are three times more likely to come back in the first week. So this step matters a lot.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 41.2,
+      "end": 52.3,
+      "text": "Honestly, I'm not surprised. When I watched the session recordings, people open the first dropdown, stare at it, and leave. Five questions before you've seen any value is too much."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 53.4,
+      "end": 57.9,
+      "text": "What do we actually need from them to personalise the first session?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 59.2,
+      "end": 66.6,
+      "text": "Only the target role. The rest improves recommendations, but we can ask later, once they've solved a problem or two."
+    },
+    {
+      "speaker": "Dev Malhotra",
+      "start": 67.6,
+      "end": 77.2,
+      "text": "So one question on the first screen, with big tappable options. Software engineer, data analyst, product manager, something else. And then straight into the first problem."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 78.4,
+      "end": 87.7,
+      "text": "I like that. We can ask the other four as small cards between problems, something like 'tell us a bit more' that they can skip."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 88.7,
+      "end": 96.8,
+      "text": "Okay, that's the decision then. One question, and the rest moves later. Dev, can you have a prototype for us by Thursday?"
+    },
+    {
+      "speaker": "Dev Malhotra",
+      "start": 97.2,
+      "end": 102.8,
+      "text": "Yes. I'll make it in Figma with the real copy and share a clickable version."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 103.5,
+      "end": 113.9,
+      "text": "And I'll set up the experiment so that half of the new users see the short version. We should know in about two weeks if the drop-off improves."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 114.4,
+      "end": 124.0,
+      "text": "Next one is mine. I ran an accessibility check on dark mode, and some things are not good. Three text colours fail the AA contrast requirement."
+    },
+    {
+      "speaker": "Dev Malhotra",
+      "start": 125.2,
+      "end": 127.2,
+      "text": "Which ones?"
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 127.6,
+      "end": 144.3,
+      "text": "The secondary text on cards is the worst, it's three point eight to one, and AA needs four and a half. Then the placeholder text in inputs, and the disabled button label. The disabled one is allowed to be low, but ours is nearly invisible."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 145.5,
+      "end": 147.7,
+      "text": "How many screens does this affect?"
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 148.3,
+      "end": 160.5,
+      "text": "Basically all of them, since the colours come from shared tokens. But that's good news, because if Dev fixes the tokens, everything updates at once. We don't have to go screen by screen.",
+      "comments": [
+        "After the fix, check the transcript view specifically, the timestamps are small and grey."
+      ]
+    },
+    {
+      "speaker": "Dev Malhotra",
+      "start": 161.8,
+      "end": 174.4,
+      "text": "Yes, I'll lighten the secondary text and the placeholder a couple of steps. I want to check with you after, so we don't lose the visual hierarchy. If everything is bright, nothing stands out."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 175.4,
+      "end": 183.5,
+      "text": "Fair. I'll check each screen when you're done, and I'll run the same audit on light mode too, just so we know."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 184.1,
+      "end": 190.4,
+      "text": "Can we stop this from coming back? I don't want to find this again in six months."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 191.9,
+      "end": 200.8,
+      "text": "We could add a contrast check to the pull request template. A short checklist item, and for token changes, a screenshot in both modes."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 202.3,
+      "end": 204.9,
+      "text": "Good idea. I'll add it this sprint."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 205.5,
+      "end": 216.3,
+      "text": "Okay, the last item, and it's a big one for the college partners. They've asked for the app in Hindi, and for two of them, in Marathi after that."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 216.8,
+      "end": 231.6,
+      "text": "I tried the Hindi strings on a few screens yesterday. The words are about thirty percent longer on average. It broke two layouts already, the filter chips wrap onto three lines, and the bottom tab bar labels get cut off."
+    },
+    {
+      "speaker": "Dev Malhotra",
+      "start": 232.5,
+      "end": 245.8,
+      "text": "That's expected. We built those with English label lengths in mind. We should let the chips scroll sideways and let the tab bar labels wrap to two lines, or just show icons with a short label."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 246.8,
+      "end": 250.9,
+      "text": "And performance? A lot of our students are on cheaper phones."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 252.3,
+      "end": 268.6,
+      "text": "That's my worry too. I checked on my own phone, which is a recent one, and it's fine. But the students use things like a Redmi nine with three gigabytes of RAM. The transcript page with a long list is probably heavy on those."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 269.4,
+      "end": 274.9,
+      "text": "Can you test on one? I think Karthik has an old Android in the drawer."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 275.3,
+      "end": 285.0,
+      "text": "He does, I've borrowed it before. I'll run the Hindi interface on it, with a throttled connection, and write down everything that breaks or feels slow."
+    },
+    {
+      "speaker": "Dev Malhotra",
+      "start": 286.4,
+      "end": 296.4,
+      "text": "If it's slow, we can render the transcript in chunks. Show the first fifty lines and load more on scroll. I've done that before, it's not hard."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 296.9,
+      "end": 312.0,
+      "text": "Let's see Saloni's findings first and then decide. Okay, I think that covers everything. Dev owns the new onboarding step and the contrast fix, Saloni tests on the low end phone, Harshita runs the experiment, I'll update the pull request template."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 313.2,
+      "end": 315.2,
+      "text": "Same time next week?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 316.1,
+      "end": 318.1,
+      "text": "Same time. Thanks, all."
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "title": "Q3 business review",
+  "days_ago": 12,
+  "time": "14:00",
+  "tags": [
+    "leadership",
+    "finance"
+  ],
+  "participants": [
+    "Ankit Khanna",
+    "Pooja Menon",
+    "Harshita Rao",
+    "Siddartha Nepal"
+  ],
+  "overview": "Leadership reviewed the third quarter. Revenue was 1.9 crore rupees against a target of 2.2 crore. College partners grew from 14 to 21 and paid conversion among students rose from 6.2 to 7.4 percent. Cloud and model costs rose 18 percent to 6.8 lakh rupees a month, but cost per active student fell from 23 to 17 rupees. The team agreed on a Diwali offer of 20 percent off annual plans, approved four engineering hires and one designer for the next quarter, and set a goal to bring monthly cloud spend under 6 lakh.",
+  "chapters": [
+    {
+      "title": "Revenue and customers",
+      "start": 4.0,
+      "bullets": [
+        "Revenue was 1.9 crore rupees against a target of 2.2 crore",
+        "College partners grew from 14 to 21, and three of the new ones are large",
+        "Paid conversion among students rose from 6.2 to 7.4 percent"
+      ]
+    },
+    {
+      "title": "Cloud and model costs",
+      "start": 90.1,
+      "bullets": [
+        "Monthly cloud and model cost rose 18 percent to 6.8 lakh rupees",
+        "Cost per active student fell from 23 to 17 rupees thanks to prompt changes and a smaller model for easy questions",
+        "Goal is to bring monthly spend under 6 lakh by reserving capacity and cleaning unused resources"
+      ]
+    },
+    {
+      "title": "Diwali offer and pricing",
+      "start": 174.7,
+      "bullets": [
+        "Offer 20 percent off annual plans during the Diwali week",
+        "Campaign goes to existing students first, then to college partner mailing lists",
+        "Pooja confirmed the discount keeps the margin positive on an annual plan"
+      ]
+    },
+    {
+      "title": "Hiring, runway and next steps",
+      "start": 243.2,
+      "bullets": [
+        "Runway is 17 months, and stays at about 15 months after the planned hiring",
+        "Approved four backend engineers and one designer for next quarter",
+        "Ankit will visit the two largest college partners before the end of the month"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Draft the Diwali offer page and the email to existing students",
+      "assignee": "Harshita Rao",
+      "due_in_days": 5,
+      "done": false
+    },
+    {
+      "text": "Share the cloud cost breakdown by service and propose reserved capacity",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 6,
+      "done": false
+    },
+    {
+      "text": "Update the runway model with the new hiring plan and share it",
+      "assignee": "Pooja Menon",
+      "due_in_days": 4,
+      "done": false
+    },
+    {
+      "text": "Confirm the GST and TDS filing dates for the quarter with the accountant",
+      "assignee": "Pooja Menon",
+      "due_in_days": 2,
+      "done": true
+    },
+    {
+      "text": "Start the search for four backend engineers and one designer",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 3,
+      "done": false
+    },
+    {
+      "text": "Visit the two largest college partners in Hyderabad and Pune before the end of the month",
+      "assignee": "Ankit Khanna",
+      "due_in_days": 14,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Ankit Khanna",
+      "start": 4.0,
+      "end": 11.8,
+      "text": "Welcome, everyone. This is the quarterly review, so I'd like numbers first and opinions after. Pooja, can you start with revenue?"
+    },
+    {
+      "speaker": "Pooja Menon",
+      "start": 12.2,
+      "end": 23.7,
+      "text": "Sure. Revenue for the quarter was one crore ninety lakh. Our target was two crore twenty lakh, so we're about fourteen percent short. Compared with last quarter, it's up twenty-two percent."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 24.4,
+      "end": 26.4,
+      "text": "Where did we fall short?"
+    },
+    {
+      "speaker": "Pooja Menon",
+      "start": 26.9,
+      "end": 39.5,
+      "text": "Mostly timing. Two college partners signed in the last week of the quarter, so their revenue lands in the next one. If I count them, we'd have been within five percent of the target."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 40.5,
+      "end": 55.6,
+      "text": "I can add some detail on that. We went from fourteen college partners to twenty-one. Three of the new ones are large, each with more than two thousand students, and all three go live in the first month of next quarter."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 57.0,
+      "end": 60.4,
+      "text": "That's encouraging. What about the students who pay directly?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 61.9,
+      "end": 74.8,
+      "text": "Paid conversion went from six point two to seven point four percent. The change that helped most was showing the sample mock interview report before asking for payment. People want to see what they're buying."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 75.3,
+      "end": 82.0,
+      "text": "And the placement report we're building this sprint should help that further, because it makes the value visible."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 82.7,
+      "end": 88.6,
+      "text": "Good. I'd like to see that number above eight percent by the end of next quarter."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 90.1,
+      "end": 93.8,
+      "text": "Siddartha, costs. I saw a big jump on the invoice."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 94.3,
+      "end": 109.1,
+      "text": "Yes. Our monthly cloud and model cost is now six point eight lakh rupees, up eighteen percent. That's mostly because usage grew, we have a lot more students. But I want to be clear that cost per student went down."
+    },
+    {
+      "speaker": "Pooja Menon",
+      "start": 109.5,
+      "end": 111.5,
+      "text": "By how much?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 112.3,
+      "end": 127.9,
+      "text": "From twenty-three rupees per active student per month to seventeen. Two things made the difference. We moved the easy questions, like syntax doubts, to a smaller and cheaper model. And Karthik's prompt change reduced the length of what we send each time.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 129.2,
+      "end": 134.8,
+      "text": "So the unit cost is going the right way, even if the total is not."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 135.6,
+      "end": 153.3,
+      "text": "Exactly. And there's more room. About one lakh rupees a month is spent on resources we don't need, old staging environments and snapshots nobody uses. Meera is cleaning those up. And if we reserve capacity for the servers we always run, we save another fifteen to twenty percent."
+    },
+    {
+      "speaker": "Pooja Menon",
+      "start": 153.9,
+      "end": 161.7,
+      "text": "Reserved capacity means we commit for a year, right? I'd want to check that against the runway before we do it."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 162.1,
+      "end": 174.0,
+      "text": "Yes, a one year commitment. I'll send you the breakdown by service so you can look at it. My goal is under six lakh a month by the end of next quarter."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 174.7,
+      "end": 178.0,
+      "text": "Next, the Diwali offer. Harshita, what are you proposing?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 178.6,
+      "end": 197.5,
+      "text": "Twenty percent off the annual plan for the week of Diwali. The annual plan is currently four thousand nine hundred rupees, so it would be three thousand nine hundred and twenty. We'd send it first to our existing students, who've been asking for it, and then to the college mailing lists."
+    },
+    {
+      "speaker": "Pooja Menon",
+      "start": 198.0,
+      "end": 209.5,
+      "text": "I checked the numbers on this. Even at twenty percent off, the annual plan is margin-positive, because the cost per student has come down. At thirty percent it would not be."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 210.6,
+      "end": 216.9,
+      "text": "Then twenty it is. I don't want a bigger discount that teaches students to wait for sales."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 217.3,
+      "end": 226.9,
+      "text": "Agreed. I'll draft the offer page and the email. And I'd like to keep the monthly price unchanged, so it nudges people towards the annual plan."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 227.4,
+      "end": 237.4,
+      "text": "Good. Make sure the GST is shown clearly. Last year we had a few complaints about the final amount being different from the price on the page."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 238.7,
+      "end": 241.7,
+      "text": "Yes, I'll show the price with GST included."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 243.2,
+      "end": 245.7,
+      "text": "Let's talk about hiring and runway. Pooja?"
+    },
+    {
+      "speaker": "Pooja Menon",
+      "start": 247.0,
+      "end": 261.1,
+      "text": "Current runway is seventeen months. If we hire four engineers and one designer next quarter, at the salary bands Siddartha shared, it drops to about fifteen months. That's still comfortable, and the revenue growth should extend it again."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 261.6,
+      "end": 265.3,
+      "text": "I'm comfortable with fifteen. Siddartha, is four the right number?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 266.3,
+      "end": 279.7,
+      "text": "Yes. With the college partners coming in, we need more people on ingestion and the reporting side. And one more designer would help Saloni and Dev, they're stretched with the Hindi interface and the new onboarding."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 281.1,
+      "end": 288.5,
+      "text": "Approved. Siddartha, start the search this week. And Neha is on the offer for the backend engineer we discussed, right?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 289.0,
+      "end": 294.5,
+      "text": "Yes, the reference checks are being done. That would be the first of the four."
+    },
+    {
+      "speaker": "Pooja Menon",
+      "start": 295.7,
+      "end": 308.3,
+      "text": "I'll update the runway model with the new plan and send it to everyone. I'll also confirm the GST and TDS filing dates with our accountant, so nothing gets missed during the Diwali week."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 308.9,
+      "end": 321.1,
+      "text": "Thank you. One last thing from me. I want to personally visit the two largest college partners, in Hyderabad and Pune, before the end of the month. Relationships matter more than any dashboard."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 322.2,
+      "end": 327.1,
+      "text": "I'll send you the contact details and a one page summary for each."
+    },
+    {
+      "speaker": "Ankit Khanna",
+      "start": 328.1,
+      "end": 332.5,
+      "text": "Perfect. Thanks, everyone. A good quarter, even if the number says otherwise."
+    }
+  ]
+}

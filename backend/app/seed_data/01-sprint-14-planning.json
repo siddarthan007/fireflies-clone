@@ -1,0 +1,396 @@
+{
+  "title": "Sprint 14 planning",
+  "days_ago": 1,
+  "time": "10:30",
+  "tags": [
+    "planning",
+    "engineering"
+  ],
+  "participants": [
+    "Siddartha Nepal",
+    "Harshita Rao",
+    "Aditya Verma",
+    "Saloni Mehta",
+    "Karthik Nair"
+  ],
+  "overview": "The team planned sprint 14 with less capacity than usual, because of Saloni's leave and Karthik's on-call week. Three items must ship before the Diwali release freeze: the upload progress bar, the prompt fix for the doubt-solving assistant, and the placement report PDF for the college partners. Moving the question to the top of the prompt raised accuracy on the evaluation set from 71 to 79 percent, and the bar for shipping is 75 percent overall with no category below 65.",
+  "chapters": [
+    {
+      "title": "Carry-over from sprint 13",
+      "start": 4.0,
+      "bullets": [
+        "Upload endpoint is merged and live on staging, p95 dropped from 40 to about 12 seconds",
+        "Retry logic for malformed files is still open because of overlapping cues in Google Meet exports",
+        "Upload progress bar will be built in the browser using the upload event"
+      ]
+    },
+    {
+      "title": "Doubt-solving assistant evaluation",
+      "start": 134.4,
+      "bullets": [
+        "420 labelled questions across DSA, system design and SQL, graded with a rubric",
+        "Accuracy was 71 percent, and long pasted code snippets caused most failures",
+        "Moving the question above the code raised accuracy to 79 percent",
+        "Ship at 75 percent overall with no category below 65, system design stays at 62"
+      ]
+    },
+    {
+      "title": "Capacity and the Diwali freeze",
+      "start": 243.2,
+      "bullets": [
+        "Release freeze starts a week before Diwali, so sprints 14 and 15 are the last windows",
+        "Saloni is on leave for a week and Karthik is on call, about 18 engineer-days less than usual",
+        "Must ship: upload progress bar, assistant prompt fix, placement report PDF"
+      ]
+    },
+    {
+      "title": "Plan and risks",
+      "start": 361.8,
+      "bullets": [
+        "Aditya: retry logic on Monday, then the PDF service",
+        "Saloni: progress bar tomorrow, then the report layout by Tuesday",
+        "Karthik: evaluation work, plus a nightly evaluation run",
+        "Main risk is the report slipping past the college partner demo"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Finish the retry logic for failed VTT parses and add tests",
+      "assignee": "Aditya Verma",
+      "due_in_days": 3,
+      "done": false
+    },
+    {
+      "text": "Build the upload progress bar with percentage for slow connections",
+      "assignee": "Saloni Mehta",
+      "due_in_days": 1,
+      "done": false
+    },
+    {
+      "text": "Rerun the full evaluation set with the new prompt and share numbers",
+      "assignee": "Karthik Nair",
+      "due_in_days": 1,
+      "done": false
+    },
+    {
+      "text": "Hand over the placement report layout as HTML and CSS",
+      "assignee": "Saloni Mehta",
+      "due_in_days": 5,
+      "done": false
+    },
+    {
+      "text": "Draft two wordings for the AI suggestion label and share with mentors",
+      "assignee": "Harshita Rao",
+      "due_in_days": 3,
+      "done": false
+    },
+    {
+      "text": "Set up a nightly evaluation run and add it to the board",
+      "assignee": "Karthik Nair",
+      "due_in_days": 6,
+      "done": false
+    },
+    {
+      "text": "Build the PDF service for the placement report using WeasyPrint",
+      "assignee": "Aditya Verma",
+      "due_in_days": 8,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 4.0,
+      "end": 17.7,
+      "text": "Okay, let's get started. We have a lot to cover and Karthik has to leave at eleven for the vendor call. Quick agenda: carry-over from sprint 13, the doubt-solving assistant, and then capacity for the Diwali window."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 19.2,
+      "end": 31.8,
+      "text": "Sounds good. One piece of context from my side first. Sales told me two college partners go live in the middle of the month, so anything that touches onboarding is not optional this sprint."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 32.2,
+      "end": 37.8,
+      "text": "Noted. Let's start with the carry-over. Aditya, the transcript ingestion changes, where did those land?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 38.4,
+      "end": 52.4,
+      "text": "Mostly done. The new upload endpoint is merged and running on staging. What's left is the retry logic for failed parses. I thought it was a day, but it turned into three because of the VTT edge cases."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 53.4,
+      "end": 55.4,
+      "text": "What kind of edge cases?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 56.7,
+      "end": 68.9,
+      "text": "Files exported from Google Meet have overlapping cues. The same sentence shows up twice with slightly different timestamps. I'm de-duplicating on speaker and start time now. I'll finish on Monday and write tests."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 70.3,
+      "end": 73.3,
+      "text": "Is that blocking anything on the customer side?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 73.8,
+      "end": 82.3,
+      "text": "No, the retry only matters for malformed files. Normal uploads work fine, and the p95 is down from forty seconds to around twelve."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 82.7,
+      "end": 87.9,
+      "text": "Good, twelve is a big improvement. Saloni, what about the web side of it?"
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 88.3,
+      "end": 103.5,
+      "text": "The upload dialog is done, including drag and drop and the error messages. The only open item is the progress state for large files. Right now it just spins, and QA flagged that on a slow connection people think it's stuck."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 104.5,
+      "end": 109.7,
+      "text": "On slow connections, honestly, that's most of our students. They upload from hostel Wi-Fi."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 110.8,
+      "end": 120.8,
+      "text": "Exactly. So I want a proper progress bar with the percentage. I either need the backend to send progress, or I can estimate it from the browser."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 122.0,
+      "end": 127.9,
+      "text": "The browser can do that with the upload progress event. You don't need anything from me."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 128.7,
+      "end": 133.2,
+      "text": "Perfect, then it's a one day thing. I'll pick it up tomorrow."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 134.4,
+      "end": 138.4,
+      "text": "Great. Karthik, you're up. The evaluation set for the doubt-solving assistant."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 139.0,
+      "end": 154.6,
+      "text": "So we have four hundred and twenty questions labelled now, across DSA, system design and SQL. I ran the current prompt against all of them. Accuracy is seventy-one percent when graded by the rubric, but the interesting part is the failure pattern."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 156.0,
+      "end": 158.0,
+      "text": "Which is?"
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 158.6,
+      "end": 173.8,
+      "text": "Most of the wrong answers are on questions where the student pastes a long code snippet. The model loses the actual question at the bottom. When I move the question to the top of the prompt, it goes up to seventy-nine.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 174.2,
+      "end": 178.2,
+      "text": "Eight points just from reordering the prompt. That's an easy win."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 179.7,
+      "end": 190.9,
+      "text": "Yes, but I don't want to ship it until I've checked that it didn't hurt the short questions. I'll rerun the full set tonight and have numbers by tomorrow morning."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 191.3,
+      "end": 196.1,
+      "text": "What's the bar for shipping? I need to tell the mentors something concrete."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 196.9,
+      "end": 203.9,
+      "text": "I'd say we ship at seventy-five overall, with no category dropping below sixty-five. Karthik, does that work for you?",
+      "comments": [
+        "Let's write this bar into the evaluation doc so it doesn't get lost."
+      ]
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 204.3,
+      "end": 212.8,
+      "text": "Works. DSA is at seventy-four right now, so we're close there. System design is the weak one at sixty-two even after the change."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 213.7,
+      "end": 221.9,
+      "text": "System design will always be fuzzy. Can we label those answers as suggestions in the UI instead of showing them as final?"
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 223.4,
+      "end": 229.3,
+      "text": "I can add a small 'AI suggestion' tag on the answer card. It's a small change."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 230.4,
+      "end": 237.1,
+      "text": "Do that. Harshita, can you check the wording with the mentors so it doesn't sound like we're hedging?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 238.4,
+      "end": 242.8,
+      "text": "I'll draft two options and share them in the channel by Monday."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 243.2,
+      "end": 257.7,
+      "text": "Okay, now the part everyone has been waiting for, capacity. Diwali is on the eighth of November this year and the release freeze starts on the thirtieth. So this sprint and the next are effectively our only shipping windows."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 259.1,
+      "end": 264.2,
+      "text": "And Saloni is out for a week in the middle of this sprint, right?"
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 265.4,
+      "end": 273.6,
+      "text": "Yes, from the sixteenth to the twentieth. My sister's wedding. I'll hand over everything before I leave, but I won't be reachable."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 274.0,
+      "end": 284.4,
+      "text": "That's fine, we'll plan around it. Karthik is on call in the second week too. By my count we have about eighteen engineer-days less than a normal sprint."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 285.1,
+      "end": 289.9,
+      "text": "Do we have a fixed list of what must ship before the freeze?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 291.4,
+      "end": 300.3,
+      "text": "Three things. The upload progress bar, the assistant fix, and the placement report export for the college partners. Everything else can slip to January.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 301.3,
+      "end": 303.9,
+      "text": "What's the status on the placement report?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 305.3,
+      "end": 315.6,
+      "text": "Design is approved. It's a PDF with a student's mock interview scores and a summary of weak areas. The college partners want it before their placement drive starts."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 316.3,
+      "end": 321.1,
+      "text": "PDF generation. Are we doing that on the backend or in the browser?"
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 322.2,
+      "end": 330.8,
+      "text": "I'd prefer the browser, we already have the data there. But the fonts for Hindi names render badly with the library we tried."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 331.4,
+      "end": 342.8,
+      "text": "Then do it on the server. I've used WeasyPrint before and it handles Devanagari properly if we ship the font. It will add about a hundred megabytes to the image, though."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 343.6,
+      "end": 347.7,
+      "text": "A hundred megabytes is fine. How long will it take you?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 349.0,
+      "end": 354.9,
+      "text": "Three days including the template, if Saloni gives me the HTML and CSS for the layout."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 355.4,
+      "end": 360.3,
+      "text": "I'll hand over the layout by Tuesday. It's mostly done in Figma already."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 361.8,
+      "end": 373.2,
+      "text": "Good. That makes the plan. Aditya does the retry logic on Monday, then the PDF service. Saloni does the progress bar tomorrow, then the report layout. Karthik owns the evaluation work."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 374.6,
+      "end": 388.3,
+      "text": "One more thing. I'd like to block half a day to set up a nightly evaluation run, so we aren't doing this by hand every time. It's two hours of work but it saves a lot later."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 389.8,
+      "end": 394.7,
+      "text": "Approved. Put it on the board so it's visible. Harshita, anything on risk?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 395.8,
+      "end": 411.3,
+      "text": "My only worry is the college partner demo. If the report slips, we lose the story. Can we agree that if the PDF isn't working end to end by next Wednesday, we show a screenshot version and ship the real one after?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 411.7,
+      "end": 419.1,
+      "text": "Yes, that's a sensible fallback. Aditya, shout early if the font issue turns out to be bigger than you think."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 419.6,
+      "end": 425.5,
+      "text": "Will do. I'll test with a Devanagari sample on the first day so we know quickly."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 426.7,
+      "end": 433.8,
+      "text": "Perfect. Thanks everyone. Karthik, go catch your vendor call, and let's meet again on Thursday for the mid-sprint check."
+    }
+  ]
+}

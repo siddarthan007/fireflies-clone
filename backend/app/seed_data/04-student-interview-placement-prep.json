@@ -1,0 +1,294 @@
+{
+  "title": "Student interview: placement preparation",
+  "days_ago": 5,
+  "time": "12:00",
+  "tags": [
+    "research"
+  ],
+  "participants": [
+    "Ishita Banerjee",
+    "Rahul Chauhan",
+    "Saloni Mehta"
+  ],
+  "overview": "Research interview with Rahul, a third year B.Tech student in Pune preparing for campus placements. He practises coding daily but rarely gets feedback on how he explains his answers, and he finds mock interviews with seniors hard to schedule. He uses AI tools for hints but does not trust them for system design. He would pay around 500 rupees a month for realistic mock interviews with feedback on communication, and would not pay for generic problem lists.",
+  "chapters": [
+    {
+      "title": "Background and current preparation",
+      "start": 4.0,
+      "bullets": [
+        "Third year B.Tech student in Pune, placements start in about four months",
+        "Practises DSA on LeetCode every day and takes weekend mock tests with friends",
+        "Prepares for both service companies and product companies"
+      ]
+    },
+    {
+      "title": "Mock interviews and feedback",
+      "start": 89.2,
+      "bullets": [
+        "Seniors help with mock interviews but are hard to schedule during their own work",
+        "Feedback is mostly about whether the code was right, not how he explained it",
+        "He freezes when asked to think aloud, and has no way to practise that"
+      ]
+    },
+    {
+      "title": "Using AI tools",
+      "start": 167.1,
+      "bullets": [
+        "Uses an AI chat tool for hints on coding problems, usually after getting stuck for 30 minutes",
+        "Does not trust it for system design because answers sound confident but are sometimes wrong",
+        "Would like it to ask follow-up questions the way a real interviewer does"
+      ]
+    },
+    {
+      "title": "Pricing and what would help",
+      "start": 247.1,
+      "bullets": [
+        "Would pay around 500 rupees a month for mock interviews with real feedback",
+        "Would not pay for a generic problem list, because free resources already exist",
+        "Many classmates use mobile data and low end phones, so the product must work on a weak connection"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Share the interview recording and notes with the product team",
+      "assignee": "Ishita Banerjee",
+      "due_in_days": 1,
+      "done": false
+    },
+    {
+      "text": "Add 'feedback on how you explained your answer' to the mock interview concept",
+      "assignee": "Saloni Mehta",
+      "due_in_days": 4,
+      "done": false
+    },
+    {
+      "text": "Schedule two more interviews with students from tier 2 city colleges",
+      "assignee": "Ishita Banerjee",
+      "due_in_days": 5,
+      "done": false
+    },
+    {
+      "text": "Review the prototype for weak internet and low end phones",
+      "assignee": "Saloni Mehta",
+      "due_in_days": 6,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 4.0,
+      "end": 18.4,
+      "text": "Hi Rahul, thanks for taking the time. Before we start, I want to say there are no right or wrong answers. We're not testing you, we're trying to understand how you prepare. Is it okay if I record this?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 19.3,
+      "end": 21.3,
+      "text": "Yes, absolutely, no problem."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 21.9,
+      "end": 30.5,
+      "text": "Great. And Saloni is here from our design team, she'll mostly listen. So, tell me about yourself and where you are with placements."
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 31.7,
+      "end": 43.5,
+      "text": "I'm in my third year of B.Tech, computer science, in Pune. Placements start in about four months, so everyone in my batch has become a little serious now. Earlier it was relaxed."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 44.6,
+      "end": 48.7,
+      "text": "What does a normal week of preparation look like for you?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 50.0,
+      "end": 65.9,
+      "text": "So basically, I solve two or three problems on LeetCode every day, mostly arrays and strings and a bit of dynamic programming. On weekends, a few friends and I take a mock test, like a timed one, and then we discuss the solutions."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 67.4,
+      "end": 70.0,
+      "text": "And which companies are you aiming for?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 71.4,
+      "end": 88.4,
+      "text": "I'm preparing for both. The service companies like TCS and Infosys have their test and it's more about aptitude and basic coding. But I'd like to try the product companies also, like Razorpay or Flipkart. For those the interviews are tougher, so I need more practice."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 89.2,
+      "end": 92.9,
+      "text": "Have you done any mock interviews, with a real person?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 93.9,
+      "end": 108.8,
+      "text": "Twice. A senior from our college who is working in Bengaluru did it over a video call. It was very helpful, but honestly, it's difficult to ask him again. He works all day, and he did it as a favour."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 110.0,
+      "end": 113.3,
+      "text": "What was the most useful thing he told you?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 114.5,
+      "end": 128.2,
+      "text": "He said my code was fine, but I was not explaining what I was thinking. I just went silent for two minutes and then typed the solution. In a real interview, they want to hear your approach.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 129.1,
+      "end": 134.7,
+      "text": "Sorry to jump in. Is that something you can practise on your own right now?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 135.5,
+      "end": 145.1,
+      "text": "Not really. When I'm solving alone, I don't speak. And my friends will just say 'it's correct' or 'it's wrong'. Nobody tells me how I sounded.",
+      "comments": [
+        "This is the gap. Nobody is giving feedback on communication, only correctness."
+      ]
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 146.3,
+      "end": 151.8,
+      "text": "That's really useful. When you say how you sounded, what would you want to know?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 153.3,
+      "end": 165.6,
+      "text": "Whether I was clear, whether I was too slow to start, whether I jumped to the code too early. Basically what an interviewer would write after the interview, but I never see that."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 167.1,
+      "end": 170.4,
+      "text": "Do you use any AI tools in your preparation?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 171.2,
+      "end": 186.0,
+      "text": "Yes, I use one of the chat tools. Not for the full solution, because then I don't learn. When I'm stuck for thirty minutes, I ask for a hint. Just a small hint, like which data structure to think about."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 186.9,
+      "end": 189.5,
+      "text": "How much do you trust the answers?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 190.8,
+      "end": 207.5,
+      "text": "For coding problems, mostly yes, because I can run the code and check. For system design, no. It gives a very confident answer, but I don't know if it's actually correct. My senior once told me one of those answers would never work in production."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 208.5,
+      "end": 211.1,
+      "text": "What would make you trust it more?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 212.5,
+      "end": 223.9,
+      "text": "If it showed why. Like, not only the architecture, but also the trade-offs. And if it said 'I'm not sure about this part', that would actually make me trust it more."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 224.8,
+      "end": 231.5,
+      "text": "Interesting. What about a mock interview where the AI plays the interviewer? How does that sound to you?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 233.0,
+      "end": 246.3,
+      "text": "That sounds good, but only if it asks follow-up questions. Real interviewers keep asking 'what if the input is huge', 'what's the complexity'. If it just reads a question and waits, it's no different from LeetCode."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 247.1,
+      "end": 256.8,
+      "text": "Let's talk about money, and please be honest. If a product gave you realistic mock interviews with feedback on how you communicate, what would you pay?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 257.8,
+      "end": 271.5,
+      "text": "For students, it has to be small. Five hundred rupees a month is okay, maybe if I use it for two or three months before placements. Two thousand a month, no. Then I'd just ask my seniors."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 272.2,
+      "end": 274.4,
+      "text": "And what wouldn't you pay for?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 275.7,
+      "end": 287.9,
+      "text": "A big list of problems. There are so many free lists already. And video lectures, those are also free. I would only pay for something that I can't get otherwise, which is feedback."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 288.5,
+      "end": 293.0,
+      "text": "One more from me. When you practise, what device are you using?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 294.3,
+      "end": 309.8,
+      "text": "Laptop mostly. But a lot of my classmates in the hostel only have their phone and mobile data. The Wi-Fi in the hostel is very slow after nine in the evening. So if the website is heavy, it won't work for them."
+    },
+    {
+      "speaker": "Saloni Mehta",
+      "start": 311.2,
+      "end": 313.2,
+      "text": "That's really helpful, thank you."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 314.0,
+      "end": 321.1,
+      "text": "Last question. If you could wave a wand and fix one thing about your preparation, what would it be?"
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 322.4,
+      "end": 334.2,
+      "text": "I would want someone, or something, that watches me solve a problem, listens to me, and tells me honestly where I was weak. Like a coach, but available at eleven at night."
+    },
+    {
+      "speaker": "Ishita Banerjee",
+      "start": 335.5,
+      "end": 343.3,
+      "text": "That's a lovely way to put it. Thank you so much, Rahul. We'll send you the voucher for your time today."
+    },
+    {
+      "speaker": "Rahul Chauhan",
+      "start": 344.0,
+      "end": 349.2,
+      "text": "Thank you, and all the best to your team. I hope it works out."
+    }
+  ]
+}

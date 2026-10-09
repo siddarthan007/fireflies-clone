@@ -1,0 +1,485 @@
+﻿@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens. Components only use the semantic names (text-fg, bg-muted, border-line, ...).
+ * The .dark block swaps their values, so no component needs a dark: variant.
+ */
+:root {
+  color-scheme: light;
+
+  --fg: #101828;
+  --fg-secondary: #344054;
+  --fg-icon: #475467;
+  --fg-muted: #667085;
+  --fg-hint: #667085;
+  --fg-disabled: #d0d5dd;
+  --fg-brand: #5925dc;
+  --fg-link: #175cd3;
+
+  --page: #ffffff;
+  --layer: #ffffff;
+  --elevated: #ffffff;
+  --subtle: #fcfcfd;
+  --muted: #f9fafb;
+  --strong: #f2f4f7;
+
+  --line: #eaecf0;
+  --line-subtle: #f2f4f7;
+  --line-strong: #d0d5dd;
+
+  --brand: #6938ef;
+  --brand-hover: #5925dc;
+  --brand-disabled: #d9d6fe;
+  --brand-soft: #f4f3ff;
+  --brand-soft-hover: #ebe9fe;
+  --brand-track: #7a5af8;
+  --brand-deep: #3e1c96;
+
+  --success: #027948;
+  --success-soft: #ecfdf3;
+  --success-strong: #12b76a;
+  --danger: #d92d20;
+  --danger-soft: #fef3f2;
+  --danger-strong: #f04438;
+  --warning-soft: #fffaeb;
+  --highlight: #fef0c7;
+
+  --overlay: rgb(12 12 13 / 0.56);
+  --contrast: #0c0c0d;
+  --on-contrast: #ffffff;
+
+  --elev-card: 0 2px 2px 0 rgb(16 24 40 / 0.04);
+  --elev-menu: 0 12px 12px -4px rgb(16 24 40 / 0.06), 0 4px 6px -2px rgb(16 24 40 / 0.04);
+  --elev-modal: 0 16px 24px -4px rgb(16 24 40 / 0.08), 0 8px 8px -4px rgb(16 24 40 / 0.02);
+
+  --upgrade-bg: #ecfdf3;
+  --upgrade-fg: #107569;
+  --upgrade-ring: #d1fae8;
+  --home-blue: rgb(17 112 207 / 0.3);
+  --home-pink: rgb(254 172 170 / 0.45);
+  --home-peach: rgb(254 209 170 / 0.6);
+
+  /* Small accent colors for icons. */
+  --accent-pink: #f670c7;
+  --accent-cyan: #22ccee;
+  --accent-yellow: #fdb022;
+  --accent-green: #12b76a;
+  --accent-red: #f04438;
+  --accent-orange: #f38744;
+
+  /* Speaker avatar colors: the -300 step of the palette. */
+  --avatar-1: #bdb4fe;
+  --avatar-2: #faa7e0;
+  --avatar-3: #84caff;
+  --avatar-4: #6ce9a6;
+  --avatar-5: #fec84b;
+  --avatar-6: #f7b27a;
+  --avatar-7: #a4bcfd;
+  --avatar-8: #67e3f9;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --fg: #fafafb;
+  --fg-secondary: #d1d1d6;
+  --fg-icon: #aeaeb2;
+  --fg-muted: #aeaeb2;
+  --fg-hint: #868686;
+  --fg-disabled: #636368;
+  --fg-brand: #8173f0;
+  --fg-link: #84caff;
+
+  --page: #131314;
+  --layer: #19191a;
+  --elevated: #1e1e1f;
+  --subtle: #131314;
+  --muted: #1e1e1f;
+  --strong: #292929;
+
+  --line: #292929;
+  --line-subtle: #292929;
+  --line-strong: #323235;
+
+  --brand-disabled: #2c2659;
+  --brand-soft: #17152e;
+  --brand-soft-hover: #1f1b3f;
+
+  --success: #7ce39c;
+  --success-soft: #10291b;
+  --danger: #f97066;
+  --danger-soft: #3a1423;
+  --warning-soft: #32240a;
+  --highlight: #5b4515;
+
+  --overlay: rgb(0 0 0 / 0.7);
+  --contrast: #ffffff;
+  --on-contrast: #0c0c0d;
+
+  --elev-card: 0 2px 2px 0 rgb(0 0 0 / 0.3);
+  --elev-menu: 0 12px 12px -4px rgb(0 0 0 / 0.3), 0 4px 6px -2px rgb(0 0 0 / 0.2);
+  --elev-modal: 0 16px 24px -4px rgb(0 0 0 / 0.4), 0 8px 8px -4px rgb(0 0 0 / 0.1);
+
+  --upgrade-bg: #10291b;
+  --upgrade-fg: #7ce39c;
+  --upgrade-ring: #204d34;
+  --home-blue: rgb(17 112 207 / 0.22);
+  --home-pink: rgb(254 172 170 / 0.1);
+  --home-peach: rgb(254 209 170 / 0.14);
+
+  --avatar-1: #574aab;
+  --avatar-2: #a84469;
+  --avatar-3: #3977bd;
+  --avatar-4: #3c8558;
+  --avatar-5: #957322;
+  --avatar-6: #a76639;
+  --avatar-7: #394fa6;
+  --avatar-8: #3789a8;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-dm-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-fg: var(--fg);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-fg-icon: var(--fg-icon);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-hint: var(--fg-hint);
+  --color-fg-disabled: var(--fg-disabled);
+  --color-fg-brand: var(--fg-brand);
+  --color-fg-link: var(--fg-link);
+
+  --color-page: var(--page);
+  --color-layer: var(--layer);
+  --color-elevated: var(--elevated);
+  --color-subtle: var(--subtle);
+  --color-muted: var(--muted);
+  --color-strong: var(--strong);
+
+  --color-line: var(--line);
+  --color-line-subtle: var(--line-subtle);
+  --color-line-strong: var(--line-strong);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-disabled: var(--brand-disabled);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-soft-hover: var(--brand-soft-hover);
+  --color-brand-track: var(--brand-track);
+  --color-brand-deep: var(--brand-deep);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-strong: var(--success-strong);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-strong: var(--danger-strong);
+  --color-warning-soft: var(--warning-soft);
+  --color-highlight: var(--highlight);
+
+  --color-overlay: var(--overlay);
+  --color-contrast: var(--contrast);
+  --color-on-contrast: var(--on-contrast);
+
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-green: var(--accent-green);
+  --color-accent-red: var(--accent-red);
+  --color-accent-orange: var(--accent-orange);
+
+  --color-avatar-1: var(--avatar-1);
+  --color-avatar-2: var(--avatar-2);
+  --color-avatar-3: var(--avatar-3);
+  --color-avatar-4: var(--avatar-4);
+  --color-avatar-5: var(--avatar-5);
+  --color-avatar-6: var(--avatar-6);
+  --color-avatar-7: var(--avatar-7);
+  --color-avatar-8: var(--avatar-8);
+
+  --shadow-card: var(--elev-card);
+  --shadow-menu: var(--elev-menu);
+  --shadow-modal: var(--elev-modal);
+
+  /* The product's type scale: size / line height / letter spacing. */
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-xs--letter-spacing: -0.1px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-sm--letter-spacing: -0.16px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-base--letter-spacing: -0.18px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-lg--letter-spacing: -0.32px;
+  --text-xl: 22px;
+  --text-xl--line-height: 28px;
+  --text-xl--letter-spacing: 0.1px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-2xl--letter-spacing: -0.2px;
+
+  --ease-ui: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@layer base {
+  body {
+    background: var(--page);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Lucide icons: the product uses a lighter 1.5px stroke. */
+  .lucide {
+    stroke-width: 1.5;
+  }
+
+  /* Keyboard focus is always visible. Mouse clicks do not show it. */
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+
+  ::placeholder {
+    color: var(--fg-hint);
+  }
+
+  ::selection {
+    background: var(--brand-soft-hover);
+  }
+
+  /* Thin scrollbars that stay out of the way. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+}
+
+/* The checkbox: a native input restyled, with a white tick drawn as a background image. */
+.checkbox {
+  appearance: none;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--layer) center / 12px no-repeat;
+  cursor: pointer;
+  transition:
+    background-color 150ms,
+    border-color 150ms;
+}
+.checkbox:checked {
+  border-color: var(--brand);
+  background-color: var(--brand);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='white' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 6.5l2.2 2.2L9.5 3.8'/%3E%3C/svg%3E");
+}
+
+/* The seek line of the player: 2px tall, filled up to --progress, with a handle on hover. */
+.player-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+.player-range::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--brand-track) var(--progress),
+    var(--strong) var(--progress)
+  );
+}
+.player-range::-moz-range-track {
+  height: 2px;
+  border-radius: 9999px;
+  background: var(--strong);
+}
+.player-range::-moz-range-progress {
+  height: 2px;
+  border-radius: 9999px;
+  background: var(--brand-track);
+}
+.player-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -5px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--brand);
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.player-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--brand);
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.player-range:hover::-webkit-slider-thumb,
+.player-range:focus-visible::-webkit-slider-thumb {
+  opacity: 1;
+}
+.player-range:hover::-moz-range-thumb,
+.player-range:focus-visible::-moz-range-thumb {
+  opacity: 1;
+}
+
+/* Search matches inside the transcript. */
+mark {
+  background: var(--highlight);
+  color: inherit;
+  border-radius: 2px;
+}
+
+/* The reference dashboard's pastel band fades into the reading surface. */
+.home-band {
+  background-image:
+    linear-gradient(to bottom, transparent, var(--page)),
+    linear-gradient(
+      128.58deg,
+      var(--home-blue) 20.58%,
+      var(--home-pink) 62.69%,
+      var(--home-peach) 96.89%,
+      transparent 113.84%
+    );
+}
+
+/* The green Upgrade button in the top bar. */
+.btn-upgrade {
+  background: linear-gradient(var(--upgrade-bg), var(--upgrade-ring));
+  color: var(--upgrade-fg);
+  box-shadow:
+    0 2px 4px rgb(0 0 0 / 0.15),
+    0 0 0 1px var(--upgrade-ring);
+}
+
+/* The colored squares on the Home page assistant cards. */
+.tile-brief {
+  background: linear-gradient(#adc1fd 4%, #7e9eff 26%, #8a7efe 100%);
+}
+.tile-prep {
+  background: linear-gradient(#f4b690 2%, #f3a16e 22%, #f286e3 100%);
+}
+.tile-tasks {
+  background: linear-gradient(#dbe762 5%, #cbde00 17%, #8abe07 100%);
+}
+
+.sidebar-drawer {
+  animation: sidebar-in 160ms var(--ease-ui);
+}
+.sidebar-drawer[open] {
+  animation: sidebar-in 160ms var(--ease-ui);
+}
+@keyframes sidebar-in {
+  from {
+    transform: translateX(-12px);
+    opacity: 0;
+  }
+}
+@media (hover: none) {
+  .sidebar-collapse,
+  .sidebar-open-icon {
+    opacity: 1;
+  }
+  .sidebar-avatar-button .sidebar-avatar {
+    opacity: 0;
+  }
+}
+@media (max-height: 600px) {
+  .sidebar-invite {
+    display: none;
+  }
+}
+
+/* Loading placeholder: a soft shimmer moving across a gray block. */
+.skeleton {
+  background: linear-gradient(90deg, var(--muted) 25%, var(--strong) 50%, var(--muted) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* Dialogs use the native <dialog> element: it traps focus and closes on Esc by itself. */
+dialog {
+  color: var(--fg);
+}
+dialog::backdrop {
+  background: var(--overlay);
+}
+dialog[open] {
+  animation: dialog-in 160ms var(--ease-ui);
+}
+dialog[open]::backdrop {
+  animation: fade-in 160ms var(--ease-ui);
+}
+
+.menu-in {
+  animation: menu-in 120ms var(--ease-ui);
+}
+.toast-in {
+  animation: toast-in 200ms var(--ease-ui);
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

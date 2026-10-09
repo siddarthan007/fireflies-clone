@@ -1,0 +1,346 @@
+{
+  "title": "Pilot kickoff with Freshworks",
+  "days_ago": 2,
+  "time": "15:00",
+  "tags": [
+    "customer",
+    "pilot"
+  ],
+  "participants": [
+    "Siddartha Nepal",
+    "Harshita Rao",
+    "Priya Raghavan",
+    "Vikram Seshadri"
+  ],
+  "overview": "Scaler AI Labs and Freshworks agreed the scope of a six week pilot of the learning assistant for new engineers in Chennai and Bengaluru, covering 60 people. Freshworks needs customer code kept out of storage and processing kept in India, so Scaler will share a security questionnaire and a data flow diagram. Success will be measured by time to first pull request and a ramp-up survey. The pilot fee is 4.5 lakh rupees plus GST, with the statement of work to follow.",
+  "chapters": [
+    {
+      "title": "Introductions and the goal of the pilot",
+      "start": 4.0,
+      "bullets": [
+        "Pilot covers new engineering hires in Chennai and Bengaluru, 60 people over six weeks",
+        "Goal is to cut the time new hires take to ship their first pull request",
+        "Freshworks wants the assistant to answer questions from internal docs, not only general coding help"
+      ]
+    },
+    {
+      "title": "Scope, content and data handling",
+      "start": 110.2,
+      "bullets": [
+        "The assistant will index selected internal docs and repositories chosen by Vikram's team",
+        "Customer code must not be stored, and processing has to stay in India under the DPDP Act",
+        "Scaler will host the pilot in the Mumbai region and send a data flow diagram",
+        "Freshworks security team needs a completed questionnaire before the pilot starts"
+      ]
+    },
+    {
+      "title": "Success metrics and timeline",
+      "start": 240.3,
+      "bullets": [
+        "Primary metric is time to first pull request, target eight weeks against the current eleven",
+        "Secondary metrics are a weekly ramp-up survey and the share of questions answered without a senior",
+        "Six week pilot, starting about three weeks from now",
+        "Weekly check-in every Thursday, with a review at the end of week six"
+      ]
+    },
+    {
+      "title": "Commercials and next steps",
+      "start": 353.6,
+      "bullets": [
+        "Pilot fee is 4.5 lakh rupees for 60 seats over six weeks, plus 18 percent GST",
+        "Siddartha will send the statement of work within three days",
+        "Next steps: security questionnaire, document list, participant list, Mumbai hosting confirmation"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Send the security questionnaire and data flow diagram to Freshworks",
+      "assignee": "Harshita Rao",
+      "due_in_days": 2,
+      "done": false
+    },
+    {
+      "text": "Share the draft statement of work with the pilot fee and GST breakdown",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 3,
+      "done": false
+    },
+    {
+      "text": "Share the list of internal docs and repositories for the assistant to index",
+      "assignee": "Vikram Seshadri",
+      "due_in_days": 5,
+      "done": false
+    },
+    {
+      "text": "Confirm the 60 pilot participants and the two office coordinators",
+      "assignee": "Priya Raghavan",
+      "due_in_days": 6,
+      "done": false
+    },
+    {
+      "text": "Set up a Slack channel for the pilot and invite both teams",
+      "assignee": "Harshita Rao",
+      "due_in_days": 1,
+      "done": true
+    },
+    {
+      "text": "Confirm Mumbai region hosting for the pilot environment",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 2,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 4.0,
+      "end": 17.7,
+      "text": "Good afternoon, everyone, and thanks for making the time. I'm Siddartha, I lead engineering at Scaler AI Labs, and Harshita here is our product manager. We're glad to finally do this kickoff in person, so to speak."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 19.2,
+      "end": 30.7,
+      "text": "Thanks, Siddartha. I'm Priya, I head learning and development for engineering at Freshworks, and Vikram is one of our engineering managers in Chennai. He'll be the technical voice on our side."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 31.9,
+      "end": 44.5,
+      "text": "Hi all. I run one of the platform teams, and for the last two years I've been the person new joiners come to with questions. Which is exactly the problem we want to fix."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 45.8,
+      "end": 52.8,
+      "text": "That's a good place to start. Priya, in your own words, what does success look like for this pilot?"
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 53.3,
+      "end": 70.0,
+      "text": "Right now it takes a new engineer about eleven weeks to ship their first meaningful pull request. Our target is eight. A lot of that time is people waiting for a senior to answer a basic question about how we deploy or where something lives."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 70.5,
+      "end": 82.0,
+      "text": "And the seniors are in meetings. So the question sits there. If an assistant can answer the routine ones from our own documentation, the seniors can focus on the hard ones."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 82.5,
+      "end": 94.7,
+      "text": "That matches what we've seen with our own learners. The assistant is useful when it's grounded in the right material. For you that means your internal docs and repositories, not just general knowledge."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 95.5,
+      "end": 108.8,
+      "text": "Yes, that's the key requirement. A generic answer about Go is not useful to a new joiner. An answer that says 'this is how our payments service is deployed, and here's the runbook' is very useful."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 110.2,
+      "end": 113.9,
+      "text": "Let's talk about scope. How many people, and which offices?"
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 114.9,
+      "end": 127.1,
+      "text": "Sixty new hires in total. Thirty-five in Chennai and twenty-five in Bengaluru. They join in two batches, so the pilot will start with the first batch and the second joins in week two."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 128.2,
+      "end": 137.9,
+      "text": "That's fine for us. Staggered starts will actually help, because we can fix anything that comes up with the first batch before the second one arrives."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 138.3,
+      "end": 151.6,
+      "text": "For content, we'll give you access to about forty internal documents and six repositories. I'll send the exact list. Some of it is sensitive, so I want to talk about data handling before we go further."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 152.7,
+      "end": 159.4,
+      "text": "Of course. Tell us what you need and we'll tell you honestly what we can and can't do."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 160.7,
+      "end": 175.5,
+      "text": "Two things. First, nothing from our repositories can be stored by you after the session. Questions and answers can be logged for quality, but the code itself can't sit in your database. Second, all processing has to stay in India."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 176.5,
+      "end": 186.5,
+      "text": "Our security team is also very clear about the Digital Personal Data Protection Act. They'll want to see where the data goes and who can access it."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 187.4,
+      "end": 199.6,
+      "text": "That's reasonable, and we've had the same conversation with two college partners. We can keep indexes encrypted and delete them at the end of the pilot, with a confirmation from us in writing.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 200.0,
+      "end": 214.5,
+      "text": "On hosting, we run in the Mumbai region. I want to confirm one detail with our infrastructure lead, which is whether the language model calls also stay in India. I'll come back to you on that within two days.",
+      "comments": [
+        "Check this with Meera before replying, the model endpoint region is not the same as our app region."
+      ]
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 215.2,
+      "end": 221.1,
+      "text": "That's the part I care most about, so thank you for flagging it rather than guessing."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 221.8,
+      "end": 229.9,
+      "text": "Can you send us the security questionnaire? Our team will want a completed one and a data flow diagram before they approve."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 230.9,
+      "end": 239.4,
+      "text": "Yes. I'll send both by the day after tomorrow. We have a standard questionnaire we've filled in before, so it won't take long."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 240.3,
+      "end": 248.1,
+      "text": "Let's pin down how we'll measure this. Priya, you mentioned time to first pull request. Is that data easy to get?"
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 248.7,
+      "end": 259.1,
+      "text": "Yes, we can pull it from our Git history for every new joiner. I can give you last year's batch as a baseline so the comparison is fair."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 260.6,
+      "end": 272.4,
+      "text": "I'd also like a short survey every week. Three questions: how confident do you feel, how often did you get stuck, and did you get an answer without waiting for a person."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 273.8,
+      "end": 285.7,
+      "text": "I like the third one. We can also report from our side how many questions the assistant answered and how many it couldn't, so you see the coverage gaps in your documentation."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 287.2,
+      "end": 296.1,
+      "text": "That would actually be useful for us beyond the pilot. A list of questions that nobody could answer is a list of missing documentation."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 296.8,
+      "end": 302.0,
+      "text": "Agreed. That has been one of the more surprising benefits for our other customers."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 303.3,
+      "end": 313.6,
+      "text": "On timing, we'd like to start in about three weeks. The first batch joins on a Monday, and I don't want them to start without the assistant ready."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 315.0,
+      "end": 321.7,
+      "text": "Three weeks is workable if the security review doesn't drag. Harshita, what's the realistic timeline on our side?"
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 323.1,
+      "end": 334.6,
+      "text": "Environment setup is one week once we have the document list. Indexing and testing is another week. So if we get the list by the end of next week, we're fine."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 335.8,
+      "end": 338.8,
+      "text": "I'll have it to you in five days."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 340.1,
+      "end": 345.6,
+      "text": "And we'd like a weekly check-in. Thursdays work well for us. Thirty minutes is enough."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 346.9,
+      "end": 352.5,
+      "text": "Thursdays are good. I'll set up a recurring invite and a shared Slack channel today."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 353.6,
+      "end": 359.5,
+      "text": "Let's talk about the commercial side, so there are no surprises later. What's the pilot fee?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 360.1,
+      "end": 377.5,
+      "text": "For sixty seats over six weeks, the pilot fee is four and a half lakh rupees, plus GST at eighteen percent. That includes setup, the weekly check-ins and the final report. If you continue after the pilot, we'll credit half the pilot fee against the annual contract."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 378.9,
+      "end": 386.3,
+      "text": "That's within what I can approve for a pilot. Procurement will want the statement of work with the GST breakdown."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 386.8,
+      "end": 396.8,
+      "text": "I'll send the draft in three days. Please let me know if your procurement team needs a vendor registration form, and I'll get that ready in parallel."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 398.0,
+      "end": 403.2,
+      "text": "They'll send you the form. It's usually a day or two on their side."
+    },
+    {
+      "speaker": "Harshita Rao",
+      "start": 404.1,
+      "end": 423.4,
+      "text": "Let me recap the next steps so we all leave with the same list. I send the questionnaire and data flow diagram in two days. Siddartha confirms the Mumbai hosting and sends the statement of work in three. Vikram sends the document list in five. Priya confirms the sixty participants in six."
+    },
+    {
+      "speaker": "Vikram Seshadri",
+      "start": 424.3,
+      "end": 427.2,
+      "text": "That's right. And we meet again on Thursday."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 427.6,
+      "end": 433.5,
+      "text": "Perfect. Thank you both, this was a very clear conversation. We're looking forward to getting started."
+    },
+    {
+      "speaker": "Priya Raghavan",
+      "start": 434.4,
+      "end": 436.4,
+      "text": "Thanks, everyone. Talk on Thursday."
+    }
+  ]
+}

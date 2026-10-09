@@ -1,0 +1,254 @@
+{
+  "title": "1:1 Siddartha and Aditya",
+  "days_ago": 9,
+  "time": "11:30",
+  "tags": [
+    "one-on-one"
+  ],
+  "participants": [
+    "Siddartha Nepal",
+    "Aditya Verma"
+  ],
+  "overview": "Siddartha and Aditya discussed Aditya's workload, which has grown because of the on-call rotation, and agreed to move on-call to a shared weekly rotation among four people. They talked about the path to a senior engineer role, where the gap is owning decisions across teams rather than technical depth, and agreed Aditya will lead the design of the PDF service. Aditya also asked to attend a distributed systems workshop in Bengaluru next month.",
+  "chapters": [
+    {
+      "title": "Workload and on-call",
+      "start": 4.0,
+      "bullets": [
+        "Aditya has carried the on-call week twice in the last month and is tired",
+        "Agreed to move on-call to a weekly rotation across four people",
+        "Aditya wants fewer interruptions during the days he is working on design"
+      ]
+    },
+    {
+      "title": "Growth towards senior engineer",
+      "start": 89.3,
+      "bullets": [
+        "Technical depth is already at the senior level",
+        "The gap is owning decisions that affect other teams and writing them down",
+        "Aditya will lead the design of the PDF service and present it to the team"
+      ]
+    },
+    {
+      "title": "Mentoring and learning",
+      "start": 182.2,
+      "bullets": [
+        "Aditya will pair with Saloni for an hour a week on API design",
+        "He wants to attend a two day distributed systems workshop in Bengaluru next month",
+        "Siddartha will approve the budget once the cost is confirmed"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Set up the new four person on-call rotation starting next week",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 4,
+      "done": false
+    },
+    {
+      "text": "Write the design document for the PDF service and present it to the team",
+      "assignee": "Aditya Verma",
+      "due_in_days": 10,
+      "done": false
+    },
+    {
+      "text": "Share the details and cost of the distributed systems workshop",
+      "assignee": "Aditya Verma",
+      "due_in_days": 2,
+      "done": false
+    },
+    {
+      "text": "Approve the workshop budget and confirm leave dates",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 5,
+      "done": false
+    },
+    {
+      "text": "Pair with Saloni for an hour each week on API design",
+      "assignee": "Aditya Verma",
+      "due_in_days": 7,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 4.0,
+      "end": 13.6,
+      "text": "Hey Aditya. Thanks for making time, I know sprint planning ran long this week. Let me start with an open question. How are you doing, really?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 15.1,
+      "end": 24.8,
+      "text": "I'm okay. Honestly, a little tired. The last month was heavy. I was on call twice, and the incident last week meant a few late nights."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 26.1,
+      "end": 37.5,
+      "text": "Yeah, I was worried about that. I looked at the rota and you did two out of the last four weeks. That's not fair, and I should have caught it earlier."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 38.1,
+      "end": 49.6,
+      "text": "It's not only the rota. It's that when I'm on call, I also get pinged for things that aren't on-call. People know I fix things quickly, so they come to me."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 50.6,
+      "end": 57.7,
+      "text": "That's a good problem to have for your reputation, and a bad problem for your calendar. What would help?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 59.0,
+      "end": 66.7,
+      "text": "A proper rotation, honestly. Weekly, and with more than just me and Karthik. Saloni and you could also be in it."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 68.1,
+      "end": 85.2,
+      "text": "Me as well, yes. It's good for me to feel the pain. Let's make it a four person rotation, starting next week, one week each. I'll set it up and write down what counts as an escalation, so people stop pinging you directly for small things.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 86.0,
+      "end": 88.9,
+      "text": "That would be a big relief. Thank you."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 89.3,
+      "end": 99.3,
+      "text": "Okay. Second thing. You asked last time about what it would take to get to senior engineer. I've thought about it properly, so let me be honest."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 99.7,
+      "end": 102.0,
+      "text": "Please. I'd rather hear it straight."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 103.5,
+      "end": 119.8,
+      "text": "On the technical side, you're already there. The ingestion work, the retry logic, the incident fix, all of it is senior level. The gap is something different. It's owning decisions that cross team boundaries, and writing them down so that others can understand why."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 120.2,
+      "end": 122.4,
+      "text": "Can you give me an example?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 122.9,
+      "end": 138.4,
+      "text": "The speaker clean-up. You fixed it in three days, which was great. But the original choice was made without anyone else seeing it. A short design note, shared before you built it, would have let Karthik ask the question about long transcripts."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 139.7,
+      "end": 144.2,
+      "text": "That's fair. I tend to just build it when I know how."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 145.7,
+      "end": 165.3,
+      "text": "Which is a good instinct for speed. For senior, I want you to also use that instinct to bring others along. Here's what I'd suggest. The PDF service is coming up. Lead the design, write a two page document, and present it to the team before you start. I'll review it with you.",
+      "comments": [
+        "Use the design note template from the incident review. It already has the 'what if this is ten times bigger' section."
+      ]
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 165.9,
+      "end": 172.9,
+      "text": "I like that. I've never presented a design to the whole team before. A bit nervous, to be honest."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 174.4,
+      "end": 181.5,
+      "text": "That's normal. We'll practise together once before, and Harshita will ask the product questions, so you won't be alone."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 182.2,
+      "end": 191.4,
+      "text": "One more on growth. Saloni mentioned she'd like to learn more about backend work. Would you be open to pairing for an hour a week?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 192.0,
+      "end": 201.3,
+      "text": "Yes, definitely. She's sharp. I could also learn from the frontend side, since I never know how my API looks to the person using it."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 202.0,
+      "end": 205.7,
+      "text": "Perfect. That's a good exchange. Can you start next week?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 206.2,
+      "end": 225.1,
+      "text": "Yes. Let's say Wednesday afternoons. Actually, can I ask about a workshop? There's a two day course on distributed systems in Bengaluru next month. It's run by people from a few of the larger product companies, and it's mostly about consistency and queues, which is exactly what we've been dealing with."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 226.6,
+      "end": 228.6,
+      "text": "What does it cost?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 229.0,
+      "end": 234.2,
+      "text": "I think around thirty-five thousand rupees, plus travel. I'll send you the exact details."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 234.7,
+      "end": 252.8,
+      "text": "That's fine, we have a learning budget and you haven't used yours this year. Send me the dates, so I can check they don't clash with the freeze. And after you come back, I'd like you to give a thirty minute talk to the team on what you learned."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 254.2,
+      "end": 256.4,
+      "text": "Of course. That's a fair deal."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 257.6,
+      "end": 262.1,
+      "text": "Okay, anything else on your mind? Anything about the team, or me?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 263.4,
+      "end": 271.2,
+      "text": "Just one thing. The Thursday check-ins have been useful. Please keep them. It helps when the whole team knows what's happening."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 272.5,
+      "end": 281.7,
+      "text": "I will. Thanks, Aditya. And thanks for being honest about the workload. Please tell me earlier next time, don't wait for a one on one."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 283.1,
+      "end": 285.1,
+      "text": "I will. Thank you."
+    }
+  ]
+}

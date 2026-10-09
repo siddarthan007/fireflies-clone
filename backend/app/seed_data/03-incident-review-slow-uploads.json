@@ -1,0 +1,331 @@
+{
+  "title": "Incident review: slow transcript uploads",
+  "days_ago": 4,
+  "time": "17:00",
+  "tags": [
+    "incident",
+    "engineering"
+  ],
+  "participants": [
+    "Siddartha Nepal",
+    "Aditya Verma",
+    "Karthik Nair",
+    "Meera Pillai"
+  ],
+  "overview": "Review of Tuesday's incident, when transcript uploads waited up to 47 minutes after a college partner uploaded about 900 recordings at once. The worker pool was capped at four, and a speaker clean-up step slowed down on long transcripts. No data was lost, 14 support tickets were raised, and monitoring did not catch it because alerts only watched the error rate. The team agreed on a queue age alert, a higher worker cap, a linear time fix for the clean-up step and a load test before placement season.",
+  "chapters": [
+    {
+      "title": "What happened",
+      "start": 4.0,
+      "bullets": [
+        "Support reported stuck uploads at about 2:10 PM on Tuesday",
+        "About 900 recordings from one college partner arrived within twenty minutes",
+        "The oldest upload waited 47 minutes, and all uploads finished with no data lost"
+      ]
+    },
+    {
+      "title": "Root causes",
+      "start": 99.4,
+      "bullets": [
+        "The worker pool was capped at 4, so the queue could not drain during the burst",
+        "The speaker clean-up step compared every line with every other line, so long transcripts were slow",
+        "The two problems multiplied each other: slow jobs and few workers"
+      ]
+    },
+    {
+      "title": "Impact and how we recovered",
+      "start": 187.4,
+      "bullets": [
+        "About 900 uploads were delayed, the longest by 47 minutes, with no data lost",
+        "14 support tickets were raised and two college partners were affected",
+        "Meera raised the worker cap to 12 by hand and the queue cleared in 25 minutes"
+      ]
+    },
+    {
+      "title": "Prevention and action items",
+      "start": 247.6,
+      "bullets": [
+        "Alert when the oldest queued upload is older than five minutes",
+        "Keep the worker cap at 12 and review the thresholds",
+        "Rewrite the speaker clean-up to be linear and test it with long transcripts",
+        "Load test with 1,500 uploads before placement season, and add a per-college rate limit"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Add an alert when the oldest queued upload is older than five minutes",
+      "assignee": "Meera Pillai",
+      "due_in_days": 2,
+      "done": false
+    },
+    {
+      "text": "Raise the worker cap from 4 to 12 and review autoscaling thresholds",
+      "assignee": "Meera Pillai",
+      "due_in_days": 0,
+      "done": true
+    },
+    {
+      "text": "Rewrite the speaker clean-up step to run in linear time and add a long transcript test",
+      "assignee": "Aditya Verma",
+      "due_in_days": 3,
+      "done": false
+    },
+    {
+      "text": "Run a load test with 1,500 uploads before placement season starts",
+      "assignee": "Karthik Nair",
+      "due_in_days": 10,
+      "done": false
+    },
+    {
+      "text": "Write a status page template for upload delays",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 5,
+      "done": false
+    },
+    {
+      "text": "Add a per-college upload rate limit to the backlog",
+      "assignee": "Aditya Verma",
+      "due_in_days": 7,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 4.0,
+      "end": 18.4,
+      "text": "Thanks for joining on a Friday evening, I know it's late. This is a blameless review. The goal is to understand what happened and what we change, not who did what. Aditya, can you take us through the timeline?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 19.9,
+      "end": 32.5,
+      "text": "Sure. Around ten past two on Tuesday, support pinged me that a college partner's students were seeing uploads stuck on 'processing'. I checked the queue, and the oldest item was already thirty-eight minutes old."
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 33.8,
+      "end": 44.9,
+      "text": "I got the same message about two minutes later, but from a different person. So we had two people investigating the same thing for a few minutes before we talked."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 45.5,
+      "end": 48.9,
+      "text": "How did we find out? Was there an alert?"
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 50.4,
+      "end": 60.0,
+      "text": "No. That's the uncomfortable part. Support found it before monitoring did. Our alerts only watch the error rate, and nothing was failing. Everything was just slow.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 61.2,
+      "end": 64.9,
+      "text": "So from the system's point of view, it looked healthy."
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 65.8,
+      "end": 73.6,
+      "text": "Exactly. CPU was fine, errors were zero, and the queue length was growing, but we never set an alert on it."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 74.1,
+      "end": 86.3,
+      "text": "Looking at the logs, about nine hundred recordings came in over twenty minutes. The college had a placement briefing and the coordinator asked everyone to upload their mock interview at the same time."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 86.7,
+      "end": 94.1,
+      "text": "So a large burst, but not an unreasonable one. That's exactly the kind of traffic we expect in this season."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 94.5,
+      "end": 97.9,
+      "text": "Right. And that's where the second problem showed up."
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 99.4,
+      "end": 110.8,
+      "text": "The worker pool. Autoscaling was configured to scale from two to four workers. Four was set months ago when we had a few dozen uploads a day, and nobody revisited it."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 111.3,
+      "end": 113.3,
+      "text": "Did autoscaling actually reach four?"
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 114.8,
+      "end": 127.1,
+      "text": "It reached four within three minutes, and then it just stayed there, because that was the maximum. So the queue kept growing even though the system was doing what we told it to."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 127.7,
+      "end": 142.5,
+      "text": "On my side, the job itself was slow. We have a step that cleans up speaker names, where it merges 'Priya' and 'Priya R' into one speaker. The way I wrote it, it compares every line with every other line."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 144.0,
+      "end": 148.0,
+      "text": "So the time grows with the square of the transcript length."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 148.6,
+      "end": 162.4,
+      "text": "Yes. For a ten minute transcript it's nothing. For a forty minute mock interview with six hundred lines, it takes about ninety seconds per job. With four workers and nine hundred jobs, that adds up very quickly.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 163.9,
+      "end": 167.2,
+      "text": "Did we have a test with a long transcript?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 167.6,
+      "end": 175.7,
+      "text": "No. All our test fixtures are under fifty lines. I should have caught that in review, and I didn't think about it."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 176.6,
+      "end": 185.9,
+      "text": "It's not one person's miss. Nobody asked what happens at ten times the size, so that's a gap in how we test. Let's keep going."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 187.4,
+      "end": 190.0,
+      "text": "What was the actual impact on users?"
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 190.5,
+      "end": 197.9,
+      "text": "About nine hundred uploads were delayed. The longest wait was forty-seven minutes. Nothing was lost or corrupted, everything completed eventually."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 198.4,
+      "end": 207.3,
+      "text": "Support logged fourteen tickets, and two college partners wrote to their account managers directly. One of them was already nervous about the placement drive."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 208.2,
+      "end": 220.0,
+      "text": "I spoke to both account managers on Wednesday and explained what happened. They were understanding, but I'd like us to be able to tell them the fix is in before they ask."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 220.9,
+      "end": 223.5,
+      "text": "How did we recover in the end?"
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 224.4,
+      "end": 236.6,
+      "text": "I raised the worker cap to twelve manually, around two forty. The queue cleared in about twenty-five minutes after that. So the manual change worked, but it should never have needed a person."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 237.0,
+      "end": 246.3,
+      "text": "I also deployed a quick patch that skips the speaker clean-up for transcripts over four hundred lines. That's a temporary workaround, not the real fix."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 247.6,
+      "end": 250.9,
+      "text": "Let's talk about what we change. Meera, monitoring first."
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 251.5,
+      "end": 267.5,
+      "text": "I'll add an alert on the age of the oldest queued upload. If anything has been waiting more than five minutes, it pages whoever is on call. I'll also keep the cap at twelve and set a reminder to review it every quarter."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 268.2,
+      "end": 272.2,
+      "text": "Can we also alert on queue length? That might fire earlier."
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 273.7,
+      "end": 286.7,
+      "text": "Queue age is better, because length depends on how fast the jobs are. Five jobs that each take an hour is worse than five hundred that each take a second. But I can add both."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 287.4,
+      "end": 291.5,
+      "text": "Both is fine. Aditya, the real fix for the clean-up step?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 292.2,
+      "end": 309.6,
+      "text": "I'll rewrite it so it groups names in one pass using a dictionary, which is linear. I'll add a test with a two thousand line transcript, and make the test fail if it takes more than a couple of seconds. I can do it in three days."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 311.1,
+      "end": 325.5,
+      "text": "And I'll run a proper load test before placement season starts. Fifteen hundred uploads in an hour is my target, which is more than we saw on Tuesday. I'd like to do it on staging with real sized files."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 326.3,
+      "end": 337.4,
+      "text": "Good. One more protection I'd like, a rate limit per college. If one partner can use up the whole queue, the others suffer. Aditya, can that go in this month?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 338.8,
+      "end": 344.8,
+      "text": "Yes, it's a small change in the upload endpoint. I'll do it after the clean-up fix."
+    },
+    {
+      "speaker": "Meera Pillai",
+      "start": 346.2,
+      "end": 354.3,
+      "text": "I'd also like a status page template for this kind of incident. On Tuesday we had to write the message from scratch."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 355.2,
+      "end": 359.7,
+      "text": "I'll write it. Short, honest, no jargon. Anything else before we close?"
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 361.2,
+      "end": 366.7,
+      "text": "Just a note that the review worked well. Everyone spoke up, and nobody got defensive."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 367.8,
+      "end": 373.7,
+      "text": "Good. Thanks, everyone. I'll post the summary and the action items in the engineering channel tonight."
+    }
+  ]
+}

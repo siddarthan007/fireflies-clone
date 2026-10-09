@@ -1,0 +1,272 @@
+{
+  "title": "Hiring debrief: backend engineer",
+  "days_ago": 7,
+  "time": "18:30",
+  "tags": [
+    "hiring"
+  ],
+  "participants": [
+    "Siddartha Nepal",
+    "Aditya Verma",
+    "Karthik Nair",
+    "Neha Kulkarni"
+  ],
+  "overview": "The panel debriefed a candidate for the backend engineer role. The coding round was strong, the system design round was good once prompted about retries and idempotency, and the values conversation went well. The main concern is two and a half years of experience against an SDE-2 bar. The panel agreed to make an offer at SDE-2 with a short reference check first, within a band of 28 to 32 lakh a year.",
+  "chapters": [
+    {
+      "title": "Coding round",
+      "start": 4.0,
+      "bullets": [
+        "Solved both problems with optimal solutions and clean code",
+        "Discussed trade-offs without being asked and tested edge cases",
+        "Aditya rated the round as a strong yes"
+      ]
+    },
+    {
+      "title": "System design round",
+      "start": 73.5,
+      "bullets": [
+        "Designed a notification service with queues and workers, with a sensible structure",
+        "Did not mention retries or idempotency until Karthik asked about duplicates",
+        "Reasoned well once prompted and proposed an idempotency key on his own"
+      ]
+    },
+    {
+      "title": "Values and concerns",
+      "start": 152.2,
+      "bullets": [
+        "Communication was clear and he asked thoughtful questions about the team and the product",
+        "Concern: two and a half years of experience against the usual three to five for SDE-2",
+        "The panel agreed his reasoning matches the level, even though the years do not"
+      ]
+    },
+    {
+      "title": "Offer and next steps",
+      "start": 234.5,
+      "bullets": [
+        "Make an offer at SDE-2 in the band of 28 to 32 lakh a year",
+        "Candidate is at 22 lakh now and expects around 32, with a 60 day notice period",
+        "Run two reference checks first and ask for a shorter notice period or a buyout"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Run two reference checks with the candidate's current manager and a former colleague",
+      "assignee": "Neha Kulkarni",
+      "due_in_days": 3,
+      "done": false
+    },
+    {
+      "text": "Prepare the offer letter at SDE-2 within the 28 to 32 lakh band for approval",
+      "assignee": "Neha Kulkarni",
+      "due_in_days": 4,
+      "done": false
+    },
+    {
+      "text": "Write up the system design feedback with the idempotency example",
+      "assignee": "Karthik Nair",
+      "due_in_days": 1,
+      "done": true
+    },
+    {
+      "text": "Talk to the candidate about the team, the on-call rotation and growth plan",
+      "assignee": "Siddartha Nepal",
+      "due_in_days": 5,
+      "done": false
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 4.0,
+      "end": 19.6,
+      "text": "Thanks, everyone. Let's keep this tight, since it's late. We have one candidate for the backend engineer role, three rounds done, and I'd like a clear hire or no hire by the end. Aditya, can you go first on the coding round?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 20.4,
+      "end": 32.6,
+      "text": "Sure. I gave two problems. The first was a rate limiter with a sliding window, and the second was merging overlapping intervals from a stream. He solved both, and both solutions were optimal."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 33.9,
+      "end": 38.7,
+      "text": "Was the code clean, or was it a first draft that just worked?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 40.2,
+      "end": 55.7,
+      "text": "Clean. He named things properly, split the logic into small functions and wrote his own test cases before I asked. For the rate limiter he talked about what happens when two requests arrive at the same millisecond, which I hadn't even prompted.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 56.7,
+      "end": 59.7,
+      "text": "Did he talk through his approach before coding?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 61.0,
+      "end": 72.1,
+      "text": "Yes, that's what impressed me most. He took about three minutes to explain the approach and the complexity, and then coded it. For me it's a strong yes on coding."
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 73.5,
+      "end": 75.5,
+      "text": "Okay, thanks. Karthik, system design?"
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 77.0,
+      "end": 92.2,
+      "text": "I asked him to design a notification service that sends push messages and emails to about two million users. His structure was good. An API, a queue, workers per channel, and a template service. He knew why each piece was there."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 93.5,
+      "end": 95.5,
+      "text": "What about the failure cases?"
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 95.9,
+      "end": 112.2,
+      "text": "That's the part where he was slower. He didn't mention retries at all until I asked what happens if the email provider times out. And duplicates, he hadn't thought of until I asked what happens if the worker crashes after sending but before acknowledging.",
+      "comments": [
+        "Fair to expect this from SDE-2, but he got there on his own once nudged. That matters more."
+      ]
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 113.3,
+      "end": 118.1,
+      "text": "That's a common blind spot. Most people think about the happy path first."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 119.6,
+      "end": 136.3,
+      "text": "Right, and what I liked is that after I asked, he got to the idempotency key by himself. I didn't have to explain it. He said, 'so each notification gets a unique id and the worker checks before sending', which is exactly the right idea."
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 137.8,
+      "end": 140.0,
+      "text": "So, how would you score it?"
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 140.8,
+      "end": 150.8,
+      "text": "Yes, with a note. For an SDE-2 I'd like failure handling to be part of the first draft. But the reasoning was strong, so I'm a yes."
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 152.2,
+      "end": 169.2,
+      "text": "From my side, the values conversation went well. He was honest about a project that failed at his current company and what he learned from it. He asked good questions about how we handle on-call and how decisions are made. I'd rate it as a yes."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 170.4,
+      "end": 172.4,
+      "text": "Any concerns from anyone?"
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 173.0,
+      "end": 185.6,
+      "text": "My only concern is the years. He has two and a half years, and our SDE-2 bar is usually three to five. I'm not sure if he's ready to own a service without help."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 186.9,
+      "end": 201.8,
+      "text": "I thought about that too. But the question is whether the level is about years or about what he can do. In the system design he reached the right answers with a nudge. In the coding round he needed none."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 202.2,
+      "end": 212.2,
+      "text": "I agree with Karthik. We've hired people with five years who needed more guidance than this. I'd rather judge the level by what he showed us today.",
+      "highlighted": true
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 213.7,
+      "end": 217.7,
+      "text": "So if we make an offer, is it SDE-2 or SDE-1?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 218.5,
+      "end": 230.7,
+      "text": "SDE-2. If we offer SDE-1 he'll probably say no, and honestly he'd be underlevelled. We can set expectations that the first three months are about owning one service with Aditya as a buddy."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 231.3,
+      "end": 233.6,
+      "text": "I'm happy to be his buddy."
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 234.5,
+      "end": 243.0,
+      "text": "On compensation. He's at twenty-two lakh now, fixed and variable together, and he expects around thirty-two. Our SDE-2 band is twenty-six to thirty-four."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 244.3,
+      "end": 256.5,
+      "text": "I don't want to start at the top of the band for someone with his experience. But I also don't want to lose him over a small gap. What about twenty-eight to thirty-two?"
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 257.9,
+      "end": 271.2,
+      "text": "That works. I'd propose thirty to start, with room to go to thirty-two if he pushes. And his notice period is sixty days, so we should ask whether his company would agree to a shorter one."
+    },
+    {
+      "speaker": "Karthik Nair",
+      "start": 271.7,
+      "end": 275.8,
+      "text": "If a buyout is needed, can we cover part of it?"
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 277.3,
+      "end": 284.7,
+      "text": "Let's see. I'd rather not decide that now. If it comes up, Neha, bring it to me with the number."
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 285.3,
+      "end": 294.6,
+      "text": "Sure. Before the offer goes out, I'd like to do two reference checks. His current manager and one former colleague. That'll take about three days."
+    },
+    {
+      "speaker": "Siddartha Nepal",
+      "start": 295.1,
+      "end": 307.3,
+      "text": "Fine. Neha, you run the reference checks. Karthik, finish the written feedback tonight, while it's fresh. And I'll talk to him myself about the team and his growth, since he asked about it."
+    },
+    {
+      "speaker": "Neha Kulkarni",
+      "start": 308.2,
+      "end": 315.2,
+      "text": "Then the plan is clear. Reference checks, offer letter within four days, and a call from Siddartha. Thanks, all."
+    },
+    {
+      "speaker": "Aditya Verma",
+      "start": 316.4,
+      "end": 318.4,
+      "text": "Good discussion. Thanks, everyone."
+    }
+  ]
+}
